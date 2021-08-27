@@ -50,8 +50,8 @@ offsetWidth = (内容宽度 + 内边距 + 边框)，无外边框 so 122px；
 <p></p>
 <p>BBB</p>
 ```
-相邻元素的margin-top和margin-bottom会发生重叠；  
-空白的内容 p 也会重叠;  
+- 相邻元素的margin-top和margin-bottom会发生重叠；  
+- 空白的内容 p 也会重叠;  
 so 15px  
 
 #### margin 负值的问题
@@ -85,7 +85,7 @@ BFC: 块级格式化上下文；
 ##### 技术点
 - 使用float布局
 - 两侧使用margin负值，以便和中间内容横向重叠
-- 防止中间内容被两侧覆盖，一个用padding 一个用margin
+- 防止中间内容被两侧覆盖，`圣杯布局`用padding `双飞翼布局`用margin
 
 ##### 手写clearfix  
 ```css
@@ -125,10 +125,36 @@ relative 依据自身定位；absolute 依据最近一层的定位元素(absolut
 - absolute 元素：top,left,bottom,right = 0 + margin: auto
 
 ### 图文样式
-- line-height的继承问题
+#### line-height的继承问题
+- 写具体数值，如30px，则继承该值
+- 写比例，如2 / 1.5, 则继承该比例
+- 写百分比，如200%，则继承`计算`出来的值(`考点`)
+
 
 ### 响应式
-- rem是什么？
+#### rem是什么？
+rem 是一个长度单位
+- px, 绝对长度单位，最常用
+- em, 相对长度单位，相对于父元素，不常用
+- rem, 相对长度单位，相对于根元素`(html)`，常用于响应式布局
+
+#### 响应式布局的常见方案？
+- media-query, 根据不同的屏幕宽度设置根元素font-size
+- rem, 基于根元素的相对单位
+
+#### vw/vh
+- rem 的弊端: "阶梯"性
+
+- 网页视口尺寸
+```javascript
+window.screen.height       // 屏幕高度
+window.innerHeight         // 网页视口高度
+document.body.clientHeight // body 高度
+```
+- vw 网页视口宽度的 1/100
+- vh 网页视口高度的 1/100
+- vmax 取两者最大值； vmin取两者最小值
 
 ### CSS3
 - 关于CSS3 动画
+- 并不是面试的重点，除非你面试是一个专门做动画的职位
