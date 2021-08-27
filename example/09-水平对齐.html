@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水平对齐</title>
+    <style>
+        .container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+        }
+        .item {
+            background-color: #ccc;
+        }
+        .container-1 {
+            text-align: center;
+        }
+        .container-2 .item {
+            display: block;
+            width: 500px;
+            margin: auto;
+        }
+        .container-3 {
+            position: relative;
+            height: 100px;
+        }
+        .container-3 .item {
+            position: absolute;
+            width: 300px;
+            height: 100px;
+            left: 50%;
+            margin-left: -150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-1">
+        <span>一段文字</span>
+    </div>
+    <div class="container container-2">
+        <span class="item">this is item</span>
+    </div>
+    <div class="container container-3">
+        <span class="item">this is item</span>
+    </div>
+</body>
+</html>
