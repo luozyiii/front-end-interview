@@ -110,6 +110,40 @@ listNode.appendChild(frag)
 
 ## BOM
 
+### 题目
+- 如何识别浏览器的类型
+- 分析拆解url各个部分
+
+### 知识点
+
+#### navigator
+```javascript
+const ua = navigator.userAgent
+const isChrome = ua.indexOf('Chrome')
+console.log(isChrome)
+```
+
+#### screen
+```javascript
+console.log(screen.width)
+console.log(screen.height)
+```
+
+#### location
+```javascript
+console.log(location.href)
+console.log(location.protocol)
+console.log(location.pathname)
+console.log(location.search)
+console.log(location.hash)
+```
+
+#### history
+```javascript
+history.back() // 后退
+history.forward() // 前进
+```
+
 ## 事件绑定
 
 ## ajax
