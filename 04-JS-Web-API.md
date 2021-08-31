@@ -209,4 +209,71 @@ div3.addEventListener('click', e => {
 
 ## ajax
 
+### 题目
+- 手写一个简易的 ajax
+- 跨域的常用实现方法
+
+### 知识点
+#### XMLHttpRequest
+> ajax.js 手写ajax
+
+#### xhr.readyState
+- 0-(未初始化)还没有调用send方法
+- 1-(载入)已调用send方法，正在发送请求
+- 2-(载入完成)send方法执行完成，已经接收到全部响应内容
+- 3-(交互)正在解析响应内容
+- 4-(完成)响应内容解析完成，可以在客户端调用
+
+#### xhr.status
+- 2xx - 表示成功处理请求，如200
+- 3xx - 需要重定向，浏览器直接跳转，如301、302、304
+- 4xx - 客户端请求错误，如404、403
+- 5xx - 服务端报错
+
+#### 跨域：同源策略，跨域解决方案
+##### 什么是跨域（同源策略）
+- ajax请求时，`浏览器`要求当前网页和server必须同源（安全）
+- 同源：协议、域名、端口，三者必须一致
+- 前端：https://a.com:8080/; server: https://b.com/api/xx （不同源）
+
+##### 加载图片 css js可无视同源策略
+- <img src="跨域的图片地址">
+- <link src="跨域的css地址">
+- <script src="跨域的js地址"></script>
+- img 可用于统计打点，可使用第三方统计服务
+- link script 可使用cdn，cdn一般是外域
+- script 可实现 JSONP
+
+##### 跨域
+- 所有的跨域，都必须经过server端允许和配合
+- 未经server端允许就实现的跨域，说明浏览器有漏洞，危险信号
+
+##### JSONP
+- 访问http://xx.com/，服务端一定返回一个html文件吗？
+- 服务端可以任意动态拼接数据返回，只要符合html格式要求
+- 同理于<script src="http://a.com/getData.js"></script>
+- script 可以绕开跨域
+- 服务器可以任意动态拼接数据返回
+- 所以，script 可以获得跨域的数据，只要服务端愿意返回
+
+##### JQuery 实现jsonp
+```javascript
+$.ajax({
+    url: 'http://abc.com',
+    dataType: 'jsonp',
+    jsonpCallback: 'callback',
+    success: function(data) {
+        console.log(data)
+    }
+})
+```
+
+##### CORS（服务端支持）
+- 服务器设置http header
+
+### 常用的ajax插件
+- JQuery
+- fetch
+- axios
+
 ## 存储
