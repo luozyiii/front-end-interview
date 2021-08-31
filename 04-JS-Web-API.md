@@ -144,7 +144,68 @@ history.back() // 后退
 history.forward() // 前进
 ```
 
-## 事件绑定
+## 事件
+> event.js
+### 题目
+#### 编写一个通用的事件监听函数
+#### 描述事件冒泡的流程
+- 基于DOM树形结构
+- 事件会顺着触发元素往上冒泡
+- 应用场景：代理
+
+#### 无限下拉的图片列表，如何监听每个图片的点击？
+- 事件代理
+- 用 e.target 获取触发元素
+- 用 matched 来判断是佛是触发元素
+
+### 知识点
+#### 事件绑定
+```javascript
+const btn = document.getElementById('btn1')
+btn.addEventListener('click', event => {
+    console.log('clicked')
+})
+
+// 通用的绑定函数
+function bindEvent(elem, type, fn) {
+    elem.addEventListener(type, fn)
+}
+const a = document.getElementById('link1')
+bindEvent(a, 'click', e=> {
+    e.preventDefault() // 阻止默认行为
+    alert('clicked')
+})
+```
+
+#### 事件冒泡
+```javascript
+const p1 = document.getElementById('p1')
+const body = document.body
+
+bindEvent(p1, 'click', e => {
+    console.log(e.target) // 获取触发的元素
+    e.stopPropagation() // 注释掉这一行，来体会事件冒泡
+    alert('激活')
+})
+bindEvent(body, 'click', e => {
+    alert('取消')
+})
+```
+
+#### 事件代理
+```javascript
+const div3 = document.getElementById('div3')
+div3.addEventListener('click', e => {
+    e.stopPropagation()
+    const target = e.target
+    if(target.nodeName === 'A') {
+        alert(target.innerHTML)
+    }
+})
+```
+- 代码简洁
+- 减少浏览器内存占用
+- 但是，不要滥用
 
 ## ajax
 
