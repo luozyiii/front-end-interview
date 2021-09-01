@@ -277,3 +277,28 @@ $.ajax({
 - axios
 
 ## 存储
+
+### 题目
+####  描述cookie localStorage sessionStorage 区别
+- 容量
+- API 的易用性
+- 是否跟随http请求发送出去
+
+### cookie
+- 本身用于浏览器和server通信
+- 被“借用”到本地存储来
+- 可用 document.cookie = '...' 修改
+
+#### cookie 缺点
+- 存储大小，最大4kb
+- http 请求时需要发送到服务端，增加请求数据量
+- 只能用 document.cookie = '...' 来修改，太过简陋
+
+### localStorage 和 sessionStorage
+- HTML5 专门为存储而设计，最大可存5M
+- API 简单易用 setItem, getItem
+- 不会随着http请求发送出去
+- localStorage 数据会永久存储，除非代码或手动删除
+- sessionStorage 数据只存在于当前会话，浏览器关闭则清空
+- 一般用 localstorage 更多
+
