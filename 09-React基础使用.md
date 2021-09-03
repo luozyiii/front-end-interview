@@ -27,3 +27,20 @@
 - 关于 event 参数
 - 传递自定义参数
 
+## 表单
+> react-demo/src/components/baseUse/FormDemo.js
+- 受控组件
+- input textarea select 用value
+- checkbox radio用 checked
+
+## 组件使用(父子组件通信)
+> react-demo/src/components/baseUse/PropsDemo.js
+- props 传递数据
+- props 传递函数
+- props 类型检查
+
+# setState(重中之重)
+> react-demo/src/components/baseUse/StateDemo.js
+- 不可变值
+- 可能是异步更新
+- 可能会被合并

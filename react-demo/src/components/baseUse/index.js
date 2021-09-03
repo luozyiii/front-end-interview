@@ -3,6 +3,9 @@ import JSXBaseDemo from './JSXBaseDemo';
 import ConditionDemo from './ConditionDemo';
 import ListDemo from './ListDemo';
 import EventDemo from './EventDemo';
+import FormDemo from './FormDemo';
+import PropsDemo from './PropsDemo';
+import StateDemo from './StateDemo';
 
 export default class BaseUseDemo extends Component {
 
@@ -19,7 +22,10 @@ export default class BaseUseDemo extends Component {
           {/* <JSXBaseDemo/> */}
           {/* <ConditionDemo/> */}
           {/* <ListDemo/> */}
-          <EventDemo/>
+          {/* <EventDemo/> */}
+          {/* <FormDemo/> */}
+          {/* <PropsDemo/> */}
+          <StateDemo/>
       </div>
     )
   }
