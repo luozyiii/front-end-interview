@@ -4,6 +4,8 @@
 - 高级特性 -- 不常用，但体现深度
 - Redux 和 React-router 使用
 
+![React 基础使用](./assets/images/react.jpg)
+
 ## JSX 基本使用
 > react-demo/src/components/baseUse/JSXBaseDemo.js
 - 变量、表达式
