@@ -12,6 +12,8 @@ import ContextDemo from './ContextDemo'
 import LazyDemo from './LzayDemo'
 import SCUDemo1 from './SCUDemo1'
 import SCUDemo2 from './SCUDemo2'
+import HOCDemo from './HOCDemo'
+import RenderPropsDemo from './RenderPropsDemo'
 
 export default class BaseUseDemo extends Component {
 
@@ -37,7 +39,9 @@ export default class BaseUseDemo extends Component {
           {/* <ContextDemo/> */}
           {/* <LazyDemo/> */}
           {/* <SCUDemo1/> */}
-          <SCUDemo2/>
+          {/* <SCUDemo2/> */}
+          {/* <HOCDemo/> */}
+          <RenderPropsDemo a="100"/>
       </div>
     )
   }

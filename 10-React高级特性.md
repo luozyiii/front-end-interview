@@ -78,6 +78,56 @@ shouldComponentUpdate(nextProps, nextState) {
 - 基于共享数据（不是深拷贝），速度好
 - 有一定的学习和迁移成本，按需使用
 
+# 关于组件公用逻辑的抽离
+- mixin，已被 React 弃用
+- 高阶组件 HOC
+- Render Props
+
 ## 高阶组件HOC
+> react-demo/src/components/baseUse/HOCDemo.js
+### 高阶组件的基本用法
+```javascript
+// 高阶组件不是一种功能，而是一种模式
+const HOCFactory = (Component) => {
+  class HOC extents React.Component {
+    // 在此定义多个组件的公用逻辑
+    render() {
+      return <Component {...this.props}/> // 返回拼装的结果
+    }
+  }
+  return HOC
+}
+const Component1 = HOCFactory(WrapComponent1)
+const Component2 = HOCFactory(WrapComponent2)
+```
+- redux connect 是高阶组件
 
 ## Render Props
+
+### 基本用法
+```javascript
+// Render Props 的核心思想
+// 通过一个函数将 class 组件的 state 作为 props传递给纯函数组件
+class Factory extends React.Component{
+  constructor() {
+    this.state = {
+      // state 即多个组件的公用逻辑的数据
+    }
+  }
+  // 修改 state
+  render() {
+    return <div>{this.props.render(this.state)}</div>
+  }
+}
+const App = () => {
+  <Factory render={
+    // render 是一个函数组件
+    (props) => <p>{props.a} {props.b} ...</p>
+  } />
+}
+```
+
+### HOC VS Render Props
+- HOC：模式简单，但会增加组件层级
+- Render Props：代码简洁，学习成本较高
+- 按需使用
