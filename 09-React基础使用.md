@@ -41,8 +41,14 @@
 - props 传递函数
 - props 类型检查
 
-# setState(重中之重)
+## setState(重中之重)
 > react-demo/src/components/baseUse/StateDemo.js
 - 不可变值
 - 可能是异步更新
 - 可能会被合并
+
+## 组件生命周期
+[生命周期图](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+- 单组件的生命周期
+- 父子组件生命周期，和Vue的一样
+
