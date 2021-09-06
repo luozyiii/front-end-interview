@@ -7,7 +7,7 @@ import FormDemo from './FormDemo';
 import PropsDemo from './PropsDemo';
 import StateDemo from './StateDemo';
 import UnControlledDemo from './UnControlledDemo'
-import ProtalsDemo from './ProtalsDemo'
+import PortalsDemo from './PortalsDemo'
 import ContextDemo from './ContextDemo'
 import LazyDemo from './LzayDemo'
 import SCUDemo1 from './SCUDemo1'
@@ -35,7 +35,7 @@ export default class BaseUseDemo extends Component {
           {/* <PropsDemo/> */}
           {/* <StateDemo/> */}
           {/* <UnControlledDemo/> */}
-          {/* <ProtalsDemo>Modal 内容</ProtalsDemo> */}
+          {/* <PortalsDemo>Modal 内容</PortalsDemo> */}
           {/* <ContextDemo/> */}
           {/* <LazyDemo/> */}
           {/* <SCUDemo1/> */}

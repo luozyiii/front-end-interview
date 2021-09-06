@@ -22,8 +22,8 @@
 - 优先使用受控组件，符合 React 设计原则
 - 必须操作 DOM时，再使用非受控组件
 
-## Protals
-> react-demo/src/components/baseUse/ProtalsDemo.js
+## Portals
+> react-demo/src/components/baseUse/PortalsDemo.js
 - 组件默认会按照既定的层级嵌套渲染
 - 如何让组件渲染到父组件以外
 
