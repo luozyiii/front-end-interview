@@ -116,5 +116,5 @@ transaction.preform(method)
 
 ### React Fiber
 - 将 reconciliation 阶段进行任务拆分（commit无法拆分）
-- DIN需要渲染时暂停，空闲时恢复
+- DOM需要渲染时暂停，空闲时恢复
 - window.requestIdleCallback
