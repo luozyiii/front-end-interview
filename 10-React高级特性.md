@@ -63,7 +63,7 @@ shouldComponentUpdate(nextProps, nextState) {
 ```
 > react-demo/src/components/baseUse/SCUDemo2.js
 
-#### SUC 使用总结
+#### SCU 使用总结
 - SCU默认返回true，即React默认重新渲染所有子组件
 - 必须配合 “不可变值” 一起使用
 - 可先不用，有性能问题再考虑使用
