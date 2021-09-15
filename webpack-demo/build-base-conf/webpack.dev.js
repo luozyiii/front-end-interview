@@ -22,6 +22,7 @@ module.exports = merge(common, {
     ],
     devServer: {
         port: 9000,
+        static: distPath,
         open: true, // 自动打开浏览器
         compress: true, // 自动gzip压缩
 
