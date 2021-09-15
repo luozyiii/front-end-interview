@@ -25,6 +25,7 @@ module.exports = merge(common, {
         static: distPath,
         open: true, // 自动打开浏览器
         compress: true, // 自动gzip压缩
+        hot: true, // 热更新
 
         // 设置代理
         proxy: {
