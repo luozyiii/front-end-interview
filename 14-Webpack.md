@@ -18,7 +18,7 @@
 ## 高级配置
 - 多入口 (build-multi-entry)
 - 抽离 css (build-min-extract-css)
-
+- 抽离公共代码和第三方代码 (build-split-chunks)
 
 ## 性能优化
 
