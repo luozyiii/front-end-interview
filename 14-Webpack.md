@@ -6,6 +6,8 @@
 - 成熟的工具，重点在于配置和使用，原理并不高优
 
 ## 基本配置
+> webpack-demo/build-base-conf
+
 - 拆开配置和 merge
 - 启动本地服务
 - 处理 ES6
@@ -14,7 +16,8 @@
 - 模块化
 
 ## 高级配置
-
+- 多入口(build-multi-entry)
+- 抽离 css
 
 
 ## 性能优化
