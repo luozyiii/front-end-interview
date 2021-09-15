@@ -35,3 +35,11 @@ const createImg = (imgUrl) => {
 }
 createImg(img1)
 createImg(img2)
+
+// 引入动态数据 - 懒加载
+setTimeout(()=> {
+    // 定义 chunk
+    import('./dynamic-data.js').then(res => {
+        console.log(res.default.message) // 注意这里的 default
+    })
+},3000)

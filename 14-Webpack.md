@@ -19,6 +19,24 @@
 - 多入口 (build-multi-entry)
 - 抽离 css (build-min-extract-css)
 - 抽离公共代码和第三方代码 (build-split-chunks)
+- 异步加载JS
+```javascript
+// 引入动态数据 - 懒加载
+setTimeout(()=> {
+    // 定义 chunk
+    import('./dynamic-data.js').then(res => {
+        console.log(res.default.message) // 注意这里的 default
+    })
+},3000)
+```
+- 处理JSX
+```javascript
+// .babelrc
+{
+  "presets": ["@babel/preset-react"],
+}
+```
+- 处理Vue （vue-loader）
 
 ## 性能优化
 
