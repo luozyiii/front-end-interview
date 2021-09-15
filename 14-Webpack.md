@@ -16,8 +16,8 @@
 - 模块化
 
 ## 高级配置
-- 多入口(build-multi-entry)
-- 抽离 css
+- 多入口 (build-multi-entry)
+- 抽离 css (build-min-extract-css)
 
 
 ## 性能优化
