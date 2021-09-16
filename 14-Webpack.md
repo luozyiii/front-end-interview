@@ -43,7 +43,7 @@ setTimeout(()=> {
 ### 优化构建速度
 > build-optimization
 
-- 优化 babel-loader
+- 优化 babel-loader `(可用于生产环境)`
 ```javascript
 {
     test: /\.js$/,
@@ -53,10 +53,25 @@ setTimeout(()=> {
     // 范围： include 和 exclude 一般两者选一个即可
 }
 ```
-- IgnorePlugin
-- noParse
-- happypack 多进程打包
-- ParallelUglifyPlugin 多进程压缩JS
+- IgnorePlugin `(可用于生产环境)`
+```javascript
+// 忽略 moment 的本地化内容
+new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
+```
+
+- noParse `(可用于生产环境)`
+```javascript
+// 过滤不需要解析的文件，忽略的文件中 不应该含有 import, require, define 的调用，或任何其他导入机制。忽略大型的 library 可以提高构建性能。
+module.exports = {
+  //...
+  module: {
+    noParse: /jquery|lodash/,
+  },
+};
+```
+
+- happypack 多进程打包 `(可用于生产环境)`
+- ParallelUglifyPlugin 多进程压缩JS `(可用于生产环境)`
 - 自动刷新
 ```javascript
 module.export = {
@@ -73,7 +88,8 @@ module.export = {
 ```
 
 - 热更新
-- DllPlugin
+
+- DllPlugin 动态链接库插件
 
 #### module chunk bundle 的区别
 - module: 各个源码文件，webpack中一切皆模板
@@ -98,6 +114,22 @@ module.export = {
 - 自动刷新：整个网页全部刷新，速度较慢
 - 自动刷新：整个页面全部刷新，状态会丢失
 - 热更新：新代码生效，网页不刷新，状态不丢失
+```javascript
+devServer: {
+  hot: true, // 热更新
+}
+```
+
+#### DllPlugin 动态链接库插件
+> webpack-dll-demo
+- 前端框架如vue react，体积大，构建慢
+- 较稳定，不常升级版本
+- 同一个版本只构建一次即可，不用每次都重新构建
+
+##### DllPlugin 使用
+- webpack 已内置DllPlugin 插件
+- DllPlugin - 打包出 dll 文件
+- DllReferencePlugin - 使用 dll 文件
 
 ### 优化产出代码
 
