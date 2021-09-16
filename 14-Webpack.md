@@ -71,6 +71,7 @@ module.exports = {
 ```
 
 - happypack 多进程打包 `(可用于生产环境)`
+- thread-loader 多进程打包 (比happypack配置更简单，推荐)
 - ParallelUglifyPlugin 多进程压缩JS `(可用于生产环境)`
 - 自动刷新
 ```javascript
