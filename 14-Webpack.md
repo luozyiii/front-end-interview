@@ -40,8 +40,45 @@ setTimeout(()=> {
 
 ## 性能优化
 
-
 ### 优化构建速度
+> build-optimization
+
+- 优化 babel-loader
+```javascript
+{
+    test: /\.js$/,
+    use: ['babel-loader?cacheDirectory'], // 开启缓存
+    include: srcPath, // 明确范围
+    // exclude: /node_modules/ // 排除范围
+    // 范围： include 和 exclude 一般两者选一个即可
+}
+```
+- IgnorePlugin
+- noParse
+- happypack 多进程打包
+- ParallelUglifyPlugin
+- 自动刷新
+- 热更新
+- DllPlugin
+
+#### module chunk bundle 的区别
+- module: 各个源码文件，webpack中一切皆模板
+- chunk：多模块合并成的，如entry import() splitChunk
+- bundle：最终的输出文件
+
+#### happypack 多进程打包
+- JS单线程，开启多进程打包
+- 提高构建速度（特别是多核CPU）
+
+#### ParallelUglifyPlugin 多进程压缩JS
+- webpack 内置Uglify工具压缩 JS
+- JS单线程，开启多进程压缩更快
+- 和 happypack 同理
+
+#### 关于开启多进程
+- 项目较大，打包较慢，开启多进程能提供速度
+- 项目较小，打包很快，开启多进程会降低速度（进程开销）
+- 按需使用
 
 ### 优化产出代码
 
