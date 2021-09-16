@@ -3,6 +3,7 @@
 - 基本使用 -- 常用，必须会
 - 高级特性 -- 不常用，但体现深度
 - Redux 和 React-router 使用
+[link](https://zh-hans.reactjs.org/)
 
 ![React 基础使用](./assets/images/react.jpg)
 
