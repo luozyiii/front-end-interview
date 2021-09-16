@@ -1,3 +1,4 @@
+const path = require('path')
 const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -11,6 +12,10 @@ const { distPath, srcPath } = require('./paths')
 
 module.exports = merge(common, {
     mode: 'production',
+    entry: {
+        index: path.join(srcPath, 'index.js'),
+        other: path.join(srcPath, 'other.js'),
+    },
     output: {
         filename: '[name].[chunkhash].js',
         path: distPath

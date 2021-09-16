@@ -56,8 +56,22 @@ setTimeout(()=> {
 - IgnorePlugin
 - noParse
 - happypack 多进程打包
-- ParallelUglifyPlugin
+- ParallelUglifyPlugin 多进程压缩JS
 - 自动刷新
+```javascript
+module.export = {
+  watch: true, // 注意：开启监听后，webpack-dev-server 会自动开启刷新浏览器！！！
+  watchOptions: {
+    // 不监听的文件或文件夹
+    ignored: /node_modules/,
+    // 监听到变化发生后会等300ms再去执行动作，防止文件更新太快导致重新编译频率太高  
+    aggregateTimeout: 300,  // 默认为300ms
+    // 判断文件是否发生变化是通过不停的去询问系统指定文件有没有变化实现的
+    poll: 1000 // 默认每隔 1000 毫秒轮询一次
+  }
+}
+```
+
 - 热更新
 - DllPlugin
 
@@ -79,6 +93,11 @@ setTimeout(()=> {
 - 项目较大，打包较慢，开启多进程能提供速度
 - 项目较小，打包很快，开启多进程会降低速度（进程开销）
 - 按需使用
+
+#### 热更新
+- 自动刷新：整个网页全部刷新，速度较慢
+- 自动刷新：整个页面全部刷新，状态会丢失
+- 热更新：新代码生效，网页不刷新，状态不丢失
 
 ### 优化产出代码
 

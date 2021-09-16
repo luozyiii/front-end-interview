@@ -1,10 +1,15 @@
 const webpack = require('webpack')
+const path = require('path')
 const { merge } = require('webpack-merge')
-const common = require('./webpack.common.js')
-const { distPath } = require('./paths')
+const common = require('./webpack.common')
+const { distPath, srcPath } = require('./paths')
 
 module.exports = merge(common, {
     mode: 'development',
+    entry: {
+        index: path.join(srcPath, 'index.js'),
+        other: path.join(srcPath, 'other.js'),
+    },
     module: {
         rules: [
             {
@@ -34,13 +39,14 @@ module.exports = merge(common, {
         new webpack.DefinePlugin({
             // 定义 window.ENV = 'development'
             ENV: JSON.stringify('development')
-        })
+        }),
     ],
     devServer: {
         port: 9000,
         static: distPath,
         open: true, // 自动打开浏览器
         compress: true, // 自动gzip压缩
+
         hot: true, // 热更新
 
         // 设置代理

@@ -43,3 +43,10 @@ setTimeout(()=> {
         console.log(res.default.message) // 注意这里的 default
     })
 },3000)
+
+// 开启热更新后, math.js 发生改变后的回调
+if (module.hot) {
+    module.hot.accept('./math', function() {
+        console.log('math.js hot update');
+    })
+}
