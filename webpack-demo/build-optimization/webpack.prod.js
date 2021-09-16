@@ -18,7 +18,8 @@ module.exports = merge(common, {
     },
     output: {
         filename: '[name].[chunkhash].js',
-        path: distPath
+        path: distPath,
+        // publicPath: 'http://cdn.xxx.com' // 修改所有静态文件 url 的前缀
     },
     module: {
         rules: [
@@ -40,7 +41,9 @@ module.exports = merge(common, {
                         // 否则，依然沿用 file-loader 的形式产出 url
                         limit: 5 * 1024,
                         // 打包到 statics 目录下; 不设置默认根目录
-                        outputPath: 'statics/'
+                        outputPath: 'statics/',
+                        // 设置图片的 cdn 地址
+                        // publicPath: 'http://cdn.xxx.com'
                     }
                 }
             },

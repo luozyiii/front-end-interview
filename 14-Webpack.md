@@ -132,6 +132,51 @@ devServer: {
 - DllReferencePlugin - 使用 dll 文件
 
 ### 优化产出代码
+#### 好处
+- 体积更小
+- 合理分包，不重复加载
+- 速度更快、内存使用更少
 
-## 构建流程概述
+#### 具体实践
+- 小图片 base64 编码
+- bundle 加 hash (命中缓存)
+- 懒加载
+- 提取公共代码
+- IgnorePlugin
+- 使用 CDN 加速
+- 使用 production
+- Scope Hosting
 
+#### 使用 production
+- 自动开启代码压缩
+- Vue React 等会自动删除调试代码（如开发环境的warning）
+- 启动Tree-Shaking `(必须用ES6 Moudle 才能让 tree-shaking 生效, commonjs 就不行)`
+
+#### ES6 Module 和 Commonjs 区别
+- ES6 Module 静态引入，编译时引入
+- Commonjs 动态引入，执行时引入
+- 只有ES6 Module 才能静态分析，实现Tree-Shaking
+```javascript
+let apiList = require('./config.api.js')
+if(isDev){
+  // 可以动态引入，执行时引入
+  apiList = require('./config.api_dev.js')
+}
+
+import apiList from './config.api.js'
+if(isDev){
+  // 编译时报错，只能静态引入
+  import apiList from './config.api_dev.js'
+}
+```
+
+#### Scope Hosting `作用域提升`
+Scope Hoisting 的实现原理其实很简单：分析出模块之间的依赖关系，尽可能将打散的模块合并到一个函数中，前提是不能造成代码冗余。 因此「只有那些被引用了一次的模块才能被合并」。
+```javascript
+// hi.js
+export default 'hi'
+
+// main.js
+import str from './hi.js'
+console.log(str)
+```
