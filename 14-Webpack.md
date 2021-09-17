@@ -4,6 +4,7 @@
 - webpack 已是前端打包构建的不二选择
 - 每日必用，面试必考
 - 成熟的工具，重点在于配置和使用，原理并不高优
+![webpackbabel](./assets/images/webpackbabel.png)
 
 ## 基本配置
 > webpack-demo/build-base-conf
