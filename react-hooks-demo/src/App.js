@@ -9,6 +9,8 @@ import UseContextDemo from "./components/UseContextDemo"
 import UseReducerDemo from "./components/UseReducerDemo"
 import UseMemoDemo from "./components/UseMemoDemo"
 import UseCallbackDemo from "./components/UseCallbackDemo"
+import CustomHooksUsage from "./components/CustomHooksUsage"
+import Teach from "./components/Teach"
 
 
 function App() {
@@ -31,7 +33,9 @@ function App() {
             {/* <UseContextDemo /> */}
             {/* <UseReducerDemo /> */}
             {/* <UseMemoDemo /> */}
-            <UseCallbackDemo />
+            {/* <UseCallbackDemo /> */}
+            {/* <CustomHooksUsage /> */}
+            <Teach  couseName="《高数1》"/>
         </div>
     );
 }
