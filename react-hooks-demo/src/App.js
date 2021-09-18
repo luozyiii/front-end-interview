@@ -6,6 +6,10 @@ import LifeCycles from "./components/LifeCycles"
 import FriendStatus from "./components/FriendStatus"
 import UseRefDemo from "./components/UseRefDemo"
 import UseContextDemo from "./components/UseContextDemo"
+import UseReducerDemo from "./components/UseReducerDemo"
+import UseMemoDemo from "./components/UseMemoDemo"
+import UseCallbackDemo from "./components/UseCallbackDemo"
+
 
 function App() {
     const [flag, setFlag] = useState(true)
@@ -24,7 +28,10 @@ function App() {
             {/* <button onClick={() => setId(id + 1)}>id++</button> */}
 
             {/* <UseRefDemo /> */}
-            <UseContextDemo />
+            {/* <UseContextDemo /> */}
+            {/* <UseReducerDemo /> */}
+            {/* <UseMemoDemo /> */}
+            <UseCallbackDemo />
         </div>
     );
 }

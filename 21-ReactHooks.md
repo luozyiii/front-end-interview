@@ -166,5 +166,25 @@ useEffect(() => {
 > react-hooks-demo/components/UseContextDemo
 
 - useReducer
+> react-hooks-demo/components/UseReducerDemo
+
 - useMemo
+> react-hooks-demo/components/UseMemoDemo
+
 - useCallback
+> react-hooks-demo/components/UseCallbackDemo
+
+#### useReducer 和 redux 的区别
+- useReducer 是 useState 的代替方案，用于state复杂变化
+- useReducer 是单个组件状态管理，组件通讯害需要 props
+- redux 是全局的状态管理，多组件共享数据
+
+#### useMemo 使用总结
+- React 默认会更新所有子组件
+- class 组件使用 SCU 和 PureComponent 做优化
+- Hooks 中使用useMemo，但优化的原理是相同的
+
+#### useCallback 使用总结
+- useMemo 缓存数据
+- useCallback 缓存函数
+- 两者都是 React Hooks 的常见优化策略
