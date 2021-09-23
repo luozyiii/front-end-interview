@@ -129,7 +129,7 @@ data.name = 'lisi'
 
 ### 通过 snabbdom 学习 vdom
 - 简洁强大的 vdom 库，易学易用
-- Vue 参考它实现的 vdom 和 diff
+- Vue 参考它(snabbdom)实现的 vdom 和 diff
 - https://github.com/snabbdom/snabbdom
 - Vue3.0 重写了 vdom 的代码，优化了性能
 - 但 vdom 的基本理念不变，面试考点也不变
@@ -158,3 +158,16 @@ data.name = 'lisi'
 - tag不相同，则直接删掉重建，不再深度比较
 ![diff2](./assets/images/diff2.png)
 - tag 和 key，两者都相同，则认为是相同节点，不再深度比较
+
+### diff 算法总结
+- h函数
+- 生成vnode
+- patch函数
+- patchVNode函数
+- addVnodes、removeVnodes
+- updateChildren函数(key 的重要性)
+
+### vdom 和 diff 总结
+- 细节不重要，updateChildren 的过程也不重要，不要深究
+- vnode 核心概念很重要：h、vnode、patch、diff、key等
+- vnode 存在的价值更加重要：数据驱动视图，控制DOM操作
