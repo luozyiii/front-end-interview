@@ -43,6 +43,8 @@
 
 #### [Vue周边工具](https://github.com/luozyiii/front-end-interview/blob/main/35-Vue%E5%91%A8%E8%BE%B9%E5%B7%A5%E5%85%B7.md)
 
+#### [Vue原理](https://github.com/luozyiii/front-end-interview/blob/main/36-Vue%E5%8E%9F%E7%90%86.md)
+
 ## 前端框架
 
 #### [前端框架及项目面试题](https://github.com/luozyiii/front-end-interview/blob/main/08-%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E5%8F%8A%E9%A1%B9%E7%9B%AE%E9%9D%A2%E8%AF%95%E9%A2%98.md)
