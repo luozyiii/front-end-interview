@@ -68,14 +68,14 @@ components: {
 },
 ```
 
-## keep-alive
+## keep-alive (缓存组件)
 > components/AdvancedUse/KeepAlive.vue
 
 - 缓存组件
 - 频繁切换，不需要重复渲染
 - Vue 常见性能优化
 
-## mixin（混合）
+## mixin（组件抽离公共逻辑）
 - 多个组件有相同的逻辑，抽离出来
 - mixin 并不是完美的解决方案，会有一些问题
 - Vue 3 剔除的Composition API 旨在解决这些问题
