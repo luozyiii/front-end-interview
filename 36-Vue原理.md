@@ -247,3 +247,43 @@ Vue.component('heading', {
 - 回顾 $nextTick
 - 汇总 data 的修改，一次性更新视图
 - 减少DOM操作次数，提高性能
+
+## 前端路由原理
+- 稍微复杂一点的SPA，都需要路由
+- vue-router 也是vue全家桶的标配之一
+- 属于 “和日常使用相关联的原理”，描述常考
+
+### 网页url组成部分
+```javascript
+// http://127.0.0.1:8881/hash.html?a=100&b=20#/aaa/bbb
+location.protocol // 'http:'
+location.hostname // '127.0.0.1'
+location.host     // '127.0.0.1:8881'
+location.port     // '8881'
+location.pathname // 'hash.html'
+location.search   // '?a=100&b=20'
+location.hash     // '#/aaa/bbb'
+```
+
+### hash 的特点
+> router-demo/hash.html
+
+- hash 变化会触发网页跳转，即浏览器的前进、后退
+- hash 变化不会刷新页面，SPA必须的特点
+- hash 永远不会提交到server端
+- onhashchange
+
+### H5 history
+> router-demo/history.html
+
+- url规范的路由，`但跳转时不刷新页面`
+- history.pushState
+- window.onpopstate
+
+### 两者选择
+- to B 的系统推荐用hash，简单易用，对url规范不敏感
+- to C 的系统，可以考虑H5 history, 但需要服务端支持
+- 能选择简单的，就别用复杂的，要考虑成本和收益
+
+
+

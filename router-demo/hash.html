@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hash test</title>
+</head>
+<body>
+    <p>hash test</p>
+    <button id="btn1">修改hash</button>
+    <script>
+        // hash 变化，包括
+        // a. JS 修改url
+        // b. 手动修改url的hash
+        // c. 浏览器的前进、后退
+        window.onhashchange = (event) => {
+            console.log('old url', event.oldURL)
+            console.log('new url', event.newURL)
+            console.log('hash:', location.hash)
+        }
+
+        // 页面初次加载，获取hash
+        document.addEventListener('DOMContentLoaded', ()=> {
+            console.log('hash:', location.hash)
+        })
+
+        // JS 修改 url
+        document.getElementById('btn1').addEventListener('click', ()=> {
+            location.href = '#/user'
+        })
+    </script>
+</body>
+</html>
