@@ -171,3 +171,79 @@ data.name = 'lisi'
 - 细节不重要，updateChildren 的过程也不重要，不要深究
 - vnode 核心概念很重要：h、vnode、patch、diff、key等
 - vnode 存在的价值更加重要：数据驱动视图，控制DOM操作
+
+## 模板编译
+- 模板是vue开发中最常用的部分，即与使用相关联的原理
+- 它不是html，有指令、插值、JS表达式，到底是什么？
+- 面试不会直接问，但会通过“组件渲染和更新过程”考察
+
+### 前置知识：JS的with语法
+- 改变 {} 内自由变量的查找规则，当做obj属性来查找
+- 如果找不到匹配的obj属性，就会报错
+- with 要慎用，它打破了作用域规则，易读性变差
+
+```javascript
+const obj = {a: 100, b: 200}
+
+console.log(obj.a)
+console.log(obj.b)
+console.log(obj.c) // undefined
+
+// 使用 with，能改变 {} 内自由变量的查找方式
+// 将 {} 内自由变量，当做 obj 的属性来查找
+with(obj) {
+    console.log(a)
+    console.log(b)
+    console.log(c) // 会报错
+}
+```
+
+### vue template compiler 将模板编译为 render 函数
+> vue-template-compiler-demo
+
+- 模板不是html，有指令、插值、JS表达式，能实现判断、循环
+- html 是标签语言，只有JS才能实现判断、循环
+- 因此，模板一定是转换为某种 JS 代码，即编译模板
+- 模板编译为 render 函数，执行render 函数返回vnode
+- 基于 vnode 再执行 patch 和 diff
+- 使用 webpack vue-loader, 会在开发环境下编译模板(`重要`)
+
+### vue 组件中使用 render 代替 template
+- 在有些复杂情况中，不能用template，可以考虑render
+- React 一直都再用 render（没有模板），和这里一样
+
+```javascript
+Vue.component('heading', {
+    render: function(createElement) {
+        return createElement(
+            'h' + this.level,
+            [
+                createElement('a', {
+                    attrs: {
+                        name: 'headerId',
+                        href: '#' + 'headerId'
+                    }
+                }, 'this is a tag')
+            ]
+        )
+    }
+})
+```
+
+## 组件 渲染/更新 过程（`重要`）
+> 一个组件渲染到页面，修改data触发更新（数据驱动视图）
+
+### 初次渲染的过程
+- 解析模板为 render 函数（或在开发环境已完成，vue-loader）
+- 触发响应式，监听data属性getter setter
+- 执行 render 函数，生成vnode， patch(elem, vnode)
+
+### 更新过程
+- 修改 data ，触发 setter（此前在getter中已被监听）
+- 重新执行 render 函数，生成 newVnode
+- patch(vnode, newVnode)
+
+### 异步渲染
+- 回顾 $nextTick
+- 汇总 data 的修改，一次性更新视图
+- 减少DOM操作次数，提高性能
