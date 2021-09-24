@@ -47,6 +47,8 @@
 
 #### [Vue真题](https://github.com/luozyiii/front-end-interview/blob/main/37-Vue%E7%9C%9F%E9%A2%98.md)
 
+#### [Vue3](https://github.com/luozyiii/front-end-interview/blob/main/38-Vue3.md)
+
 ## 前端框架
 
 #### [前端框架及项目面试题](https://github.com/luozyiii/front-end-interview/blob/main/08-%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6%E5%8F%8A%E9%A1%B9%E7%9B%AE%E9%9D%A2%E8%AF%95%E9%A2%98.md)
