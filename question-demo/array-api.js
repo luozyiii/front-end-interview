@@ -8,7 +8,7 @@ console.log(pushRes, arr)
 const unshiftRes = arr.unshift(1) // 返回length
 console.log(unshiftRes,arr)
 
-const shiftRes = arr.shift() // 返回删除的数 1
+const shiftRes = arr.shift() // 返回删除的数 10
 console.log(shiftRes, arr)
 
 // 都改变了源数组
