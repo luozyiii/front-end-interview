@@ -8,7 +8,7 @@ const res = fn2()
 console.log(res)
 
 Function.prototype.bind1 = function() {
-    // 将参赛拆解为数组
+    // 将参数拆解为数组
     const args = Array.prototype.slice.call(arguments)
 
     // 获取this (数组第一项)
