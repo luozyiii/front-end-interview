@@ -100,6 +100,7 @@ BFC: 块级格式化上下文；
 ```
 
 #### flex画色子
+>example/07-flex画骰子.html
 flex实现一个三点色子
 ##### 常用语法的回顾
 - flex-direction
@@ -109,16 +110,22 @@ flex实现一个三点色子
 - align-self
 
 ### 定位
+> example/08-定位.html
+
 - absolute和relative分别依据什么定位
 relative 依据自身定位；absolute 依据最近一层的定位元素(absolute, relative, fixed)定位；找不到根据body定位
 
 #### 居中对齐有哪些实现方式？
 ##### 水平居中
+> example/09-水平对齐.html
+
 - inline 元素：text-align: center
 - block 元素：margin: auto
 - absolute 元素：left:50% + margin-left负值
 
 ##### 垂直居中
+> example/10-垂直对齐.html
+
 - inline 元素：line-height 的值等于height值
 - absolute 元素：top:50% + margin-top负值
 - absolute 元素：left: 50% + top: 50% + transform: translate(-50%,-50%);
@@ -126,6 +133,8 @@ relative 依据自身定位；absolute 依据最近一层的定位元素(absolut
 
 ### 图文样式
 #### line-height的继承问题
+> example/11-图文样式.html
+
 - 写具体数值，如30px，则继承该值
 - 写比例，如2 / 1.5, 则继承该比例
 - 写百分比，如200%，则继承`计算`出来的值(`考点`)
@@ -133,16 +142,22 @@ relative 依据自身定位；absolute 依据最近一层的定位元素(absolut
 
 ### 响应式
 #### rem是什么？
+> example/12-rem.html
+
 rem 是一个长度单位
 - px, 绝对长度单位，最常用
 - em, 相对长度单位，相对于父元素，不常用
 - rem, 相对长度单位，相对于根元素`(html)`，常用于响应式布局
 
 #### 响应式布局的常见方案？
+> example/13-响应式.html
+
 - media-query, 根据不同的屏幕宽度设置根元素font-size
 - rem, 基于根元素的相对单位
 
 #### vw/vh
+> example/14-vw-vh.html
+
 - rem 的弊端: "阶梯"性
 
 - 网页视口尺寸
