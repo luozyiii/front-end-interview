@@ -1,4 +1,5 @@
 # JS Web API
+> js-web-api
 
 ## 从JS基础知识到JS Web API
 - JS基础知识，规定语法（ESMA 62 标准）
@@ -64,7 +65,7 @@ console.log(p1.nodeType)
 ```
 
 ##### property 和 attribute
-- property: 修改对象属性，不会提现到html结构中
+- property: 修改对象属性，不会体现到html结构中
 - attribute: 修改html属性，会改变html结构
 - 两者都有可能引起DOM重新渲染
 
@@ -156,7 +157,7 @@ history.forward() // 前进
 #### 无限下拉的图片列表，如何监听每个图片的点击？
 - 事件代理
 - 用 e.target 获取触发元素
-- 用 matched 来判断是佛是触发元素
+- 用 matched 来判断是不是触发元素
 
 ### 知识点
 #### 事件绑定
