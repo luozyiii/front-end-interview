@@ -11,8 +11,11 @@ fn2() // {x: 200}
 const zhangsan = {
     name: '张三',
     sayHi() {
-        // this 即当前对象
+        // this 即当前对象 zhangsan
         console.log(this)
+    },
+    sayHi2: () => {
+        console.log(this) // window
     },
     wait() {
         setTimeout(function(){
@@ -22,7 +25,7 @@ const zhangsan = {
     },
     waitAgain() {
         setTimeout(() => {
-            // this 即当前对象
+            // this 即当前对象 zhangsan
             console.log(this)
         }, 0);
     }
