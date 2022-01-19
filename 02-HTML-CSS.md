@@ -14,7 +14,7 @@
 
 ### 布局
 #### 盒子模型的宽度如何计算？
-> example/01.html
+> htmlcss-demo/01.html
 ```html
 <!-- 如下代码，请问div1的 offsetWidth 是多少？ -->
 <style>
@@ -31,7 +31,7 @@ offsetWidth = (内容宽度 + 内边距 + 边框)，无外边框 so 122px；
 补充：如果让offsetWidth = 100px，该如何做？（box-sizing:boder-box）此时的 offsetWidth = width; 内容宽度为78px.  
 
 #### margin 纵向重叠的问题
-> example/02.html
+> htmlcss-demo/02.html
 ```html
 
 <!-- 如下代码，AAA 与 BBB 之间的距离是多少 -->
@@ -55,14 +55,14 @@ offsetWidth = (内容宽度 + 内边距 + 边框)，无外边框 so 122px；
 so 15px  
 
 #### margin 负值的问题
-> example/03.html
+> htmlcss-demo/03.html
 对margin 的top left right bottom设置负值，有何效果？  
 - margin-top 和 margin-left负值；元素向上 向左移动；  
 - margin-right负值，右侧元素左移，自身不受影响；  
 - margin-bottom负值，下方元素上移，自身不受影响；
 
 #### BFC的理解和应用
->example/04-BFC.html
+>htmlcss-demo/04-BFC.html
 ##### 什么是BFC？如何应用  
 BFC: 块级格式化上下文；  
 一块独立渲染的区域，内部元素的渲染不会影响边界以外的元素；  
@@ -77,7 +77,7 @@ BFC: 块级格式化上下文；
 #### float布局的问题，以及clearfix
 
 ##### 如何实现圣杯布局和双飞翼布局
->example/05.html example/06.html
+>htmlcss-demo/05.html htmlcss-demo/06.html
 - 三栏布局，中间一栏最先加载和渲染（内容最重要）
 - 两侧内容固定，中间内容随着宽度自适应
 - 一般用于PC网页
@@ -100,7 +100,7 @@ BFC: 块级格式化上下文；
 ```
 
 #### flex画色子
->example/07-flex画骰子.html
+>htmlcss-demo/07-flex画骰子.html
 flex实现一个三点色子
 ##### 常用语法的回顾
 - flex-direction
@@ -110,21 +110,21 @@ flex实现一个三点色子
 - align-self
 
 ### 定位
-> example/08-定位.html
+> htmlcss-demo/08-定位.html
 
 - absolute和relative分别依据什么定位
 relative 依据自身定位；absolute 依据最近一层的定位元素(absolute, relative, fixed)定位；找不到根据body定位
 
 #### 居中对齐有哪些实现方式？
 ##### 水平居中
-> example/09-水平对齐.html
+> htmlcss-demo/09-水平对齐.html
 
 - inline 元素：text-align: center
 - block 元素：margin: auto
 - absolute 元素：left:50% + margin-left负值
 
 ##### 垂直居中
-> example/10-垂直对齐.html
+> htmlcss-demo/10-垂直对齐.html
 
 - inline 元素：line-height 的值等于height值
 - absolute 元素：top:50% + margin-top负值
@@ -133,7 +133,7 @@ relative 依据自身定位；absolute 依据最近一层的定位元素(absolut
 
 ### 图文样式
 #### line-height的继承问题
-> example/11-图文样式.html
+> htmlcss-demo/11-图文样式.html
 
 - 写具体数值，如30px，则继承该值
 - 写比例，如2 / 1.5, 则继承该比例
@@ -142,7 +142,7 @@ relative 依据自身定位；absolute 依据最近一层的定位元素(absolut
 
 ### 响应式
 #### rem是什么？
-> example/12-rem.html
+> htmlcss-demo/12-rem.html
 
 rem 是一个长度单位
 - px, 绝对长度单位，最常用
@@ -150,13 +150,13 @@ rem 是一个长度单位
 - rem, 相对长度单位，相对于根元素`(html)`，常用于响应式布局
 
 #### 响应式布局的常见方案？
-> example/13-响应式.html
+> htmlcss-demo/13-响应式.html
 
 - media-query, 根据不同的屏幕宽度设置根元素font-size
 - rem, 基于根元素的相对单位
 
 #### vw/vh
-> example/14-vw-vh.html
+> htmlcss-demo/14-vw-vh.html
 
 - rem 的弊端: "阶梯"性
 
