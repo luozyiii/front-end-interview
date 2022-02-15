@@ -9,7 +9,7 @@
 - 不能拓展其他方法
 
 ## 非受控组件
-> react-demo/src/components/baseUse/UnControlledDemo.js
+> react-demo/src/components/advanced/UnControlledDemo.js
 - ref
 - defaultValue 和 defaultChecked
 
@@ -23,7 +23,7 @@
 - 必须操作 DOM时，再使用非受控组件
 
 ## Portals
-> react-demo/src/components/baseUse/PortalsDemo.js
+> react-demo/src/components/advanced/PortalsDemo.js
 - 组件默认会按照既定的层级嵌套渲染
 - 如何让组件渲染到父组件以外
 
@@ -33,13 +33,13 @@
 - fixed 需要放在body 第一层级
 
 ## context
-> react-demo/src/components/baseUse/ContextDemo.js
+> react-demo/src/components/advanced/ContextDemo.js
 - 公共信息（语言、主题）如何传递给每个组件？
 - 用props 传递太繁琐
 - 用redux小题大做
 
 ## 异步组件
-> react-demo/src/components/baseUse/LzayDemo.js
+> react-demo/src/components/advanced/LzayDemo.js
 - import()
 - React.lazy
 - React.Suspense
@@ -51,7 +51,7 @@
 
 ### shouldComponentUpdate（简称：SCU）
 - React 默认：父组件有更新，子组件则无条件更新！！！
-> react-demo/src/components/baseUse/SCUDemo1.js
+> react-demo/src/components/advanced/SCUDemo1.js
 ```javascript
 // 基本用法
 shouldComponentUpdate(nextProps, nextState) {
@@ -61,7 +61,7 @@ shouldComponentUpdate(nextProps, nextState) {
   return false // 不重复渲染
 }
 ```
-> react-demo/src/components/baseUse/SCUDemo2.js
+> react-demo/src/components/advanced/SCUDemo2.js
 
 #### SCU 使用总结
 - SCU默认返回true，即React默认重新渲染所有子组件
@@ -84,7 +84,7 @@ shouldComponentUpdate(nextProps, nextState) {
 - Render Props
 
 ## 高阶组件HOC
-> react-demo/src/components/baseUse/HOCDemo.js
+> react-demo/src/components/advanced/HOCDemo.js
 ### 高阶组件的基本用法
 ```javascript
 // 高阶组件不是一种功能，而是一种模式
@@ -103,7 +103,7 @@ const Component2 = HOCFactory(WrapComponent2)
 - redux connect 是高阶组件
 
 ## Render Props
-
+> react-demo/src/components/advanced/RenderPropsDemo.js
 ### 基本用法
 ```javascript
 // Render Props 的核心思想

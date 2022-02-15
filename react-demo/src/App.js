@@ -1,9 +1,9 @@
-import BaseUseDemo from "./components/baseUse";
+import Demo from "./components";
 
 function App() {
   return (
     <div>
-      <BaseUseDemo/>
+      <Demo/>
     </div>
   );
 }
