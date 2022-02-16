@@ -44,7 +44,7 @@ const compiler = require('vue-template-compiler')
 // v-model
 const template = `<input type="text" v-model="name"/>`
 // 主要看input 事件
-with(this){return _c('input',{directives:[{name:"model",rawName:"v-model",value:(name),expression:"name"}],attrs:{"type":"text"},domProps:{"value":(name)},on:{"input":function($event){if($event.target.composing)return;name=$event.target.value}}})}
+// with(this){return _c('input',{directives:[{name:"model",rawName:"v-model",value:(name),expression:"name"}],attrs:{"type":"text"},domProps:{"value":(name)},on:{"input":function($event){if($event.target.composing)return;name=$event.target.value}}})}
 
 // 编译
 const res = compiler.compile(template)
