@@ -106,12 +106,12 @@ transaction.preform(method)
 
 ### 更新的两个阶段
 - 上述的patch被拆分为两个阶段：
-- reconciliation 阶段 - 执行diff算法，纯JS计算
+- reconciliation 协调阶段 - 执行diff算法，纯JS计算
 - commit 阶段 - 将diff结果渲染到DOM
 
 #### 可能会有性能问题（解决方案 fiber）
 - JS是单线程，且和DOM渲染共用一个线程
-- 当组件足够负责，组件更新时计算和渲染都压力大
+- 当组件足够复杂，组件更新时计算和渲染都压力大
 - 同时再有DOM操作需求（动画、鼠标拖拽等），将卡顿
 
 ### React Fiber
