@@ -169,8 +169,8 @@ data.name = 'lisi'
 
 ### vdom 和 diff 总结
 - 细节不重要，updateChildren 的过程也不重要，不要深究
-- vnode 核心概念很重要：h、vnode、patch、diff、key等
-- vnode 存在的价值更加重要：数据驱动视图，控制DOM操作
+- vdom 核心概念很重要：h、vnode、patch、diff、key等
+- vdom 存在的价值更加重要：数据驱动视图，控制DOM操作
 
 ## 模板编译
 - 模板是vue开发中最常用的部分，即与使用相关联的原理
